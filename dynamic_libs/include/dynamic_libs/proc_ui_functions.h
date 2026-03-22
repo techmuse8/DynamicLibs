@@ -30,6 +30,14 @@ extern "C" {
 
 #include "os_types.h"
 
+typedef enum
+{
+    PROCUI_STATUS_FOREGROUND,
+    PROCUI_STATUS_BACKGROUND,
+    PROCUI_STATUS_RELEASING,
+    PROCUI_STATUS_EXIT,
+} ProcUIStatus;
+
 extern u32 proc_ui_handle;
 
 typedef u32 (*ProcUICallback)(void*);
