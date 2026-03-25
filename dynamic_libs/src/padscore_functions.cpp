@@ -32,8 +32,8 @@ EXPORT_DECL(s32, WPADProbe, s32 chan, u32 * pad_type);
 EXPORT_DECL(s32, WPADSetDataFormat, s32 chan, s32 format);
 EXPORT_DECL(void, WPADEnableURCC, s32 enable);
 EXPORT_DECL(void, WPADRead, s32 chan, void * data);
-EXPORT_DECL(s32, KPADRead, s32 chan, KPADData * data, u32 size);
-EXPORT_DECL(s32, KPADReadEx, s32 chan, KPADData * data, u32 size, s32 *error);
+EXPORT_DECL(s32, KPADRead, s32 chan, KPADStatus * status, u32 size);
+EXPORT_DECL(s32, KPADReadEx, s32 chan, KPADStatus * status, u32 size, s32 *error);
 EXPORT_DECL(void,WPADSetAutoSleepTime,u8 minute);
 EXPORT_DECL(void,WPADDisconnect,s32 chan);
 

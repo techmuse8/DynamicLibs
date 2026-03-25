@@ -103,7 +103,7 @@ extern u32 padscore_handle;
 #define WPAD_PRO_STICK_R_EMULATION_LEFT      0x00400000
 #define WPAD_PRO_STICK_R_EMULATION_RIGHT     0x00800000
 
-typedef struct _KPADData {
+typedef struct _KPADStatus {
     u32 btns_h;
     u32 btns_d;
     u32 btns_r;
@@ -165,7 +165,7 @@ typedef struct _KPADData {
         u32 unused_6[20];
     };
     u32 unused_7[16];
-} KPADData;
+} KPADStatus;
 
 typedef struct WPADReadData_ {
     u8 unknown[40];
@@ -196,8 +196,8 @@ extern s32 (* WPADProbe)(s32 chan, u32 * pad_type);
 extern s32 (* WPADSetDataFormat)(s32 chan, s32 format);
 extern void (* WPADEnableURCC)(s32 enable);
 extern void (* WPADRead)(s32 chan, void * data);
-extern s32 (* KPADRead)(s32 chan, KPADData * data, u32 size);
-extern s32 (* KPADReadEx)(s32 chan, KPADData * data, u32 size, s32 *error);
+extern s32 (* KPADRead)(s32 chan, KPADStatus * status, u32 size);
+extern s32 (* KPADReadEx)(s32 chan, KPADStatus * status, u32 size, s32 *error);
 extern void (*WPADSetAutoSleepTime)(u8 time);
 extern void (*WPADDisconnect)( s32 chan );
 

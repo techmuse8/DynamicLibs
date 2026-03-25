@@ -40,6 +40,8 @@ typedef enum _VPADChan {
     VPAD_CHAN_1 = 1,
 } VPADChan;
 
+#define VPAD_MAX_READ_BUFS 16
+
 #define VPAD_BUTTON_A        0x8000
 #define VPAD_BUTTON_B        0x4000
 #define VPAD_BUTTON_X        0x2000
@@ -135,14 +137,14 @@ typedef struct {
     u8 mic;                      /* Microphone status */
     u8 unk_volume;               /* One less than volume */
     u8 paddings[7];
-} VPADData;
+} VPADStatus;
 
 void InitVPadFunctionPointers(void);
 void InitAcquireVPad(void);
 
 extern void (* VPADInit)(void);
 extern void (* VPADShutdown)(void);
-extern s32 (* VPADRead)(s32 chan, VPADData *buffer, u32 buffer_size, s32 *error);
+extern s32 (* VPADRead)(s32 chan, VPADStatus *buffer, u32 buffer_size, s32 *error);
 extern void (* VPADSetAccParam)(s32 chan, f32 play_radius, f32 sensitivity);
 extern void (* VPADGetAccParam)(s32 chan, f32 *play_radius, f32 *sensitivity);
 extern void (* VPADSetBtnRepeat)(s32 chan, f32 delay_sec, f32 pulse_sec);

@@ -29,7 +29,7 @@ u32 vpadbase_handle = 0;
 
 EXPORT_DECL(void, VPADInit, void);
 EXPORT_DECL(void, VPADShutdown, void);
-EXPORT_DECL(s32, VPADRead, s32 chan, VPADData *buffer, u32 buffer_size, s32 *error);
+EXPORT_DECL(s32, VPADRead, s32 chan, VPADStatus *buffer, u32 buffer_size, s32 *error);
 EXPORT_DECL(void, VPADSetAccParam, s32 chan, f32 play_radius, f32 sensitivity);
 EXPORT_DECL(void, VPADGetAccParam, s32 chan, f32 *play_radius, f32 *sensitivity);
 EXPORT_DECL(void, VPADSetBtnRepeat, s32 chan, f32 delay_sec, f32 pulse_sec);
