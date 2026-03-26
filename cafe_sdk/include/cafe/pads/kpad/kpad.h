@@ -1,5 +1,3 @@
 #pragma once
 
 #include <dynamic_libs/padscore_functions.h>
-
-#define PAD_MAX_CONTROLLERS 4
