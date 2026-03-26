@@ -77,6 +77,15 @@ typedef enum _VPADChan {
 #define VPAD_MASK_EMULATED_STICKS       0x7F800000
 #define VPAD_MASK_BUTTONS               ~VPAD_MASK_EMULATED_STICKS
 
+//! Touch
+#define VPAD_TP_TOUCH_OFF   0
+#define VPAD_TP_TOUCH_ON    1
+
+#define VPAD_TP_VALIDITY_VALID          0        
+#define VPAD_TP_VALIDITY_INVALID_X      1        
+#define VPAD_TP_VALIDITY_INVALID_Y      2        
+#define VPAD_TP_VALIDITY_INVALID_XY     (VPAD_TP_VALIDITY_INVALID_X | VPAD_TP_VALIDITY_INVALID_Y)
+
 typedef enum VPADTPResolution {
     VPAD_TP_1920x1080,
     VPAD_TP_1280x720,
