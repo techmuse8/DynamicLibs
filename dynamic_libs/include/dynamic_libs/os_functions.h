@@ -132,6 +132,7 @@ extern s32 (* OSJoinThread)(OSThread * thread, s32 * ret_val);
 extern s32 (* OSSetThreadPriority)(OSThread * thread, s32 priority);
 extern void (* OSDetachThread)(OSThread * thread);
 extern OSThread * (* OSGetCurrentThread)(void);
+extern void* (*OSGetThreadSpecific)(s32 index);
 extern const char * (* OSGetThreadName)(OSThread * thread);
 
 extern void (* OSGetActiveThreadLink)(OSThread * thread, void* link);
