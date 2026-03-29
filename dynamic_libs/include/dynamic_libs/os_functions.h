@@ -83,11 +83,13 @@ typedef void *(*DisasmGetSym)(u32 addr, u8 *symbolName, u32 nameBufSize);
 #define EXPORT_FUNC_WRITE(func, val)    *(u32*)(((u32)&func) + 0) = (u32)val
 
 #define OS_FIND_EXPORT(handle, func)    _os_find_export(handle, # func, &funcPointer);                                  \
-                                        EXPORT_FUNC_WRITE(func, funcPointer);
+                                        EXPORT_FUNC_WRITE(func, funcPointer);                                           \
+                                        if (!funcPointer) OSFatal("FAILED TO EXPORT " #func);
 
 #define OS_FIND_EXPORT_EX(handle, func, func_p)                                                                         \
                                         _os_find_export(handle, # func, &funcPointer);                                  \
-                                        EXPORT_FUNC_WRITE(func_p, funcPointer);
+                                        EXPORT_FUNC_WRITE(func_p, funcPointer);                                         \
+                                        if (!funcPointer) OSFatal("FAILED TO EXPORT " #func);
 
 #define OS_MUTEX_SIZE                   44
 
